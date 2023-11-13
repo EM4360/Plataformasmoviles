@@ -12,7 +12,6 @@
 #container p {
   font-size: 16px;
   line-height: 22px;  
-  color: #e40b0b;
   margin: 0;
 }
 
@@ -32,4 +31,10 @@
 .center-image {
   max-width: 50%;
   height: auto;
+}
+.contenedor{
+  background-color: aqua;
+}
+.inner-scroll{
+  background-color: aqua;
 }
