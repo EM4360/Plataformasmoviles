@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'formpublicar',
+    loadChildren: () => import('./pages/formpublicar/formpublicar.module').then( m => m.FormpublicarPageModule)
+  },
 ];
 
 @NgModule({
