@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>formpublicar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">formpublica</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content style="justify-content: center;">
+  <ion-grid style="width: 700px;">
+     <div style="text-align: center;background-color: #A0D2D6;">
+      <h1>Informacion de la mascota</h1>
+       <ion-col size="12" size-md="6" size-lg="6">
+         <form style="background-color: #A0D2D6;"> 
+           <ion-item style="background-color: #A0D2D6;">
+             <ion-label position="floating">Nombre de la mascota</ion-label>
+             <ion-input type="text"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label position="floating">Raza</ion-label>
+             <ion-input type="text"></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label position="floating">Tamaño</ion-label>
+             <ion-input type="text"></ion-input>
+           </ion-item>
+           <ion-item>
+            <ion-label position="floating">Sexo</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+           <ion-item>
+             <ion-label position="floating">Descripcion</ion-label>
+             <ion-textarea></ion-textarea>
+           </ion-item>
+           <ion-item>
+            <ion-label>Imagenes de la mascota</ion-label>
+            <ion-button slot="end" expand="full" fill="clear">Seleccionar</ion-button>
+          </ion-item>
+           <h1>Ubicacion</h1>
+           <ion-item>
+            <ion-label position="floating">Ciudad</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Barrio</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Fecha de perdida</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+           <ion-button expand="block" type="submit">Enviar formulario</ion-button>
+         </form>
+       </ion-col>
+     </div>
+  </ion-grid>
+ </ion-content>
+</ion-content>
+
+
