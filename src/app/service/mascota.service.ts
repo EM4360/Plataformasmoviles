@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Mascota } from '../models/mascota';
 import { Action } from 'rxjs/internal/scheduler/Action';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +45,11 @@ export class MascotaService {
       }
     }) 
 
+    }
+    publicacion!: Observable<Mascota>
+    obtenerMascotabyId(uid:string){
+      this.publicacion = this.database.collection("mascotas").doc(uid).valueChanges().pipe(map((data:any)=>data as Mascota ));
+      return this.publicacion
     }
    }
 

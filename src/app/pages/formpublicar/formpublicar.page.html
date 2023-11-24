@@ -14,17 +14,17 @@
 
   <ion-content style="justify-content: center;">
   <ion-grid style="width: 700px;">
-     <div [formGroup]="Mascota"  style="text-align: center;background-color: #A0D2D6;">
+     <div [formGroup]="mascotaform"  style="text-align: center;background-color: #A0D2D6;">
       <h1>Informacion de la mascota</h1>
        <ion-col size="12" size-md="6" size-lg="6">
          <form  style="background-color: #A0D2D6;" > 
            <ion-item style="background-color: #A0D2D6;">
              <ion-label position="floating">Nombre de la mascota</ion-label>
-             <ion-input type="text" name="nombre" formControlName="nombre" ></ion-input>
+             <ion-input type="text" name="nombre" [formControl]="mascotaform.controls.nombre"></ion-input>
            </ion-item>
            <ion-item>
              <ion-label position="floating">Raza</ion-label>
-             <ion-select name="raza" id="raza" formControlName="raza">
+             <ion-select name="raza" id="raza" [formControl]="mascotaform.controls.raza">
                 <ion-select-option value="caniche">Caniche</ion-select-option>
                 <ion-select-option value="foxterrier">Foxterrier</ion-select-option>
                 <ion-select-option value="labrador">Labrador</ion-select-option>
@@ -35,7 +35,7 @@
            </ion-item>
            <ion-item>
              <ion-label position="floating">Tamaño</ion-label>
-             <ion-select type="text" name="tamaño" formControlName="tamano">
+             <ion-select name="tamaño" [formControl]="mascotaform.controls.tamano" >
               <ion-select-option value="Pequeño">Pequeño</ion-select-option>
               <ion-select-option value="Mediano">Mediano</ion-select-option>
               <ion-select-option value="Grande ">Grande</ion-select-option>
@@ -43,31 +43,31 @@
            </ion-item>
            <ion-item>
             <ion-label position="floating">Sexo</ion-label>
-            <ion-select type="text" formControlname="sexo">
-              <ion-select-option>Hembra</ion-select-option>
-              <ion-select-option>Macho</ion-select-option>
+            <ion-select  [formControl]="mascotaform.controls.sexo">
+              <ion-select-option value="Hembra">Hembra</ion-select-option>
+              <ion-select-option value="Macho">Macho</ion-select-option>
             </ion-select>
           </ion-item>
            <ion-item>
              <ion-label position="floating">Descripcion</ion-label>
-             <ion-textarea type="text" formControlName="descripcion"></ion-textarea>
+             <ion-textarea [formControl]="mascotaform.controls.descripcion" type="text" ></ion-textarea>
            </ion-item>
            <ion-item>
             <ion-label>Imagenes de la mascota</ion-label>
-            <ion-input type="text" formControlName="img"></ion-input>
+            <ion-input type="text" [formControl]="mascotaform.controls.img"></ion-input>
           </ion-item>
            <h1>Ubicacion</h1>
            <ion-item>
             <ion-label position="floating">Ciudad</ion-label>
-            <ion-input type="text" formControlName="ciudad"></ion-input>
+            <ion-input type="text" [formControl]="mascotaform.controls.ciudad" ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Barrio</ion-label>
-            <ion-input type="text" formControlName="barrio"></ion-input>
+            <ion-input type="text" [formControl]="mascotaform.controls.barrio"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Fecha de perdida</ion-label>
-            <ion-input type="text" formControlName="fecha"></ion-input>
+            <ion-input type="text" [formControl]="mascotaform.controls.fecha" ></ion-input>
           </ion-item>
            <ion-button expand="block" type="submit" (click)="agregarmascota()" >Enviar formulario</ion-button>
          </form>

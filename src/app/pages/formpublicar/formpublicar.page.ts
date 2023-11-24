@@ -13,7 +13,7 @@ export class FormpublicarPage implements OnInit {
   coleccionmascotas: Mascota[] = []
   mascotaseleccionada!: Mascota;
 
-  Mascota = new FormGroup({
+  mascotaform = new FormGroup({
     nombre: new FormControl("", [Validators.required]),
     raza: new FormControl("", [Validators.required]),
     sexo: new FormControl("", [Validators.required]),
@@ -32,18 +32,18 @@ export class FormpublicarPage implements OnInit {
 
 
   async agregarmascota() {
-    if (this.Mascota.value) {
+    if (this.mascotaform.value) {
       let nuevamascota: Mascota = {
         uid: '',
-        nombre: this.Mascota.value.nombre!,
-        raza: this.Mascota.value.raza!,
-        sexo: this.Mascota.value.sexo!,
-        tamano: this.Mascota.value.tamano!,
-        descripcion: this.Mascota.value.descripcion!,
-        img: this.Mascota.value.img!,
-        ciudad: this.Mascota.value.ciudad!,
-        barrio: this.Mascota.value.barrio!,
-        fecha: this.Mascota.value.fecha!,
+        nombre: this.mascotaform.value.nombre!,
+        raza: this.mascotaform.value.raza!,
+        sexo: this.mascotaform.value.sexo!,
+        tamano: this.mascotaform.value.tamano!,
+        descripcion: this.mascotaform.value.descripcion!,
+        img: this.mascotaform.value.img!,
+        ciudad: this.mascotaform.value.ciudad!,
+        barrio: this.mascotaform.value.barrio!,
+        fecha: this.mascotaform.value.fecha!,
 
       }
       await this.mascotaservice.Crearmascotas(nuevamascota)
