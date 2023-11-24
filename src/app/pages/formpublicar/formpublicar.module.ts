@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+
 import { IonicModule } from '@ionic/angular';
 
 import { FormpublicarPageRoutingModule } from './formpublicar-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormpublicarPage } from './formpublicar.page';
 
@@ -13,7 +15,8 @@ import { FormpublicarPage } from './formpublicar.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FormpublicarPageRoutingModule
+    FormpublicarPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [FormpublicarPage]
 })
