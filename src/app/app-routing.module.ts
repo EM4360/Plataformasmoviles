@@ -14,7 +14,11 @@ const routes: Routes = [
   {
     path: 'formpublicar',
     loadChildren: () => import('./pages/formpublicar/formpublicar.module').then( m => m.FormpublicarPageModule)
+  },  {
+    path: 'cardmascotas',
+    loadChildren: () => import('./pages/cardmascotas/cardmascotas.module').then( m => m.CardmascotasPageModule)
   },
+
 ];
 
 @NgModule({
