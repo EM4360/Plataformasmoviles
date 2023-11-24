@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'formpublicar',
     loadChildren: () => import('./pages/formpublicar/formpublicar.module').then( m => m.FormpublicarPageModule)
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
+  },
 ];
 
 @NgModule({
