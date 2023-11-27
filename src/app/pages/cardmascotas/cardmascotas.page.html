@@ -10,21 +10,22 @@
       <ion-title size="large">cardmascotas</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div class="col" *ngFor="let publicacion of coleccionMascotas">
-     <ion-card>
-      <img alt="Silhouette of mountains"
-        src="{{publicacion.img}}" />
+
+  <div class="d-flex-center" *ngFor="let mascota of mascotas$ |async">
+    <ion-card class="d-flex-center">
+      <img alt="Silhouette of mountains" src="{{mascota.img}}" />
       <ion-card-header>
-        <ion-card-title>{{publicacion.nombre}}</ion-card-title>
-        <ion-card-subtitle>{{publicacion.raza}}{{publicacion.sexo}} </ion-card-subtitle>
+        <ion-card-title>{{mascota.nombre}}</ion-card-title>
+        <ion-card-subtitle>{{mascota.raza}}{{mascota.sexo}} </ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-        {{publicacion.descripcion}} {{publicacion.barrio}}
+        {{mascota.descripcion}} {{mascota.barrio}}
 
-        <ion-button ></ion-button>
+        <ion-button (click)="confirmarEliminacion(mascota.uid)">Eliminar</ion-button>
+        <ion-button (click)="abrirModalEdicion(mascota)">Editar</ion-button>
       </ion-card-content>
     </ion-card>
-  </div>
+    </div>
 
 </ion-content>

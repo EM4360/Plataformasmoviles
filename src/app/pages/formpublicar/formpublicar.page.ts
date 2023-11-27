@@ -32,7 +32,7 @@ export class FormpublicarPage implements OnInit {
 
 
   async agregarmascota() {
-    if (this.mascotaform.value) {
+    if (this.mascotaform.valid) {
       let nuevamascota: Mascota = {
         uid: '',
         nombre: this.mascotaform.value.nombre!,
