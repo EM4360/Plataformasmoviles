@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>edicionmascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="cerrarmodal()">Cerrar</ion-button>
+      </ion-buttons>
+      <ion-title size="large">edicionmascota</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="mascota.nombre" name="nombre" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">raza</ion-label>
+      <ion-select name="raza" id="raza"[(ngModel)]="mascota.raza" required>
+        <ion-select-option value="caniche">Caniche</ion-select-option>
+        <ion-select-option value="foxterrier">Foxterrier</ion-select-option>
+        <ion-select-option value="labrador">Labrador</ion-select-option>
+        <ion-select-option value="salchicha">Salchicha</ion-select-option>
+        <ion-select-option value="chihuahua">Chihuahua</ion-select-option>
+        <ion-select-option value="otro">Otro</ion-select-option>
+     </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tamaño</ion-label>
+      <ion-select name="tamaño" [(ngModel)]="mascota.tamano" >
+       <ion-select-option value="Pequeño">Pequeño</ion-select-option>
+       <ion-select-option value="Mediano">Mediano</ion-select-option>
+       <ion-select-option value="Grande ">Grande</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Sexo</ion-label>
+      <ion-select  name="sexo" [(ngModel)]="mascota.sexo">
+        <ion-select-option value="Hembra">Hembra</ion-select-option>
+        <ion-select-option value="Macho">Macho</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input [(ngModel)]="mascota.descripcion" name="descripcion" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Imagen</ion-label>
+      <ion-input [(ngModel)]="mascota.img" name="img" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ciudad</ion-label>
+      <ion-input [(ngModel)]="mascota.ciudad" name="ciudad" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Barrio</ion-label>
+      <ion-input [(ngModel)]="mascota.barrio" name="barrio" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha de perdida</ion-label>
+      <ion-input [(ngModel)]="mascota.fecha" name="fecha" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="guardarCambios()">Guardar Cambios</ion-button>
+  </ion-list>
+</ion-content>

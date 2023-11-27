@@ -10,16 +10,22 @@
       <ion-title size="large">cardmascotas</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://www.lavanguardia.com/files/image_948_465/uploads/2023/09/22/650d56b9c6606.jpeg" />
-    <ion-card-header>
-      <ion-card-title>Momo</ion-card-title>
-      <ion-card-subtitle>Perdido. 2 años</ion-card-subtitle>
-    </ion-card-header>
 
-    <ion-card-content>
-      Momo se perdio el dd/mm/aa a las xx:xxhs, tiene 2 años de edad, es raza xxxx, de color negro y es amigable.
-      Es un miembro importante de la familia, si saben algo comuniquense al 2997393904.
-    </ion-card-content>
-  </ion-card>
+  <div class="d-flex-center" *ngFor="let mascota of mascotas$ |async">
+    <ion-card class="d-flex-center">
+      <img alt="Silhouette of mountains" src="{{mascota.img}}" />
+      <ion-card-header>
+        <ion-card-title>{{mascota.nombre}}</ion-card-title>
+        <ion-card-subtitle>{{mascota.raza}}{{mascota.sexo}} </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{mascota.descripcion}} {{mascota.barrio}}
+
+        <ion-button (click)="confirmarEliminacion(mascota.uid)">Eliminar</ion-button>
+        <ion-button (click)="abrirModalEdicion(mascota)">Editar</ion-button>
+      </ion-card-content>
+    </ion-card>
+    </div>
+
 </ion-content>
